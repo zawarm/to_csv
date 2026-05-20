@@ -156,7 +156,7 @@ Future myCSV(
 
   // Convert the list of data into a CSV formatted string.
   String csvData =
-      ListToCsvConverter(fieldDelimiter: fieldDelimiter).convert(headerAndDataList);
+      Csv(fieldDelimiter: fieldDelimiter).encode(headerAndDataList);
 
   // Save or share the CSV file depending on the platform.
   if (kIsWeb) {
@@ -189,7 +189,9 @@ Future myCSV(
         myFile = await convertFilePathToXFile(unknownValue);
       }
       if (myFile != null) {
-        await Share.shareXFiles([myFile], text: 'Csv File');
+        await SharePlus.instance.share(
+          ShareParams(files: [myFile], text: 'Csv File'),
+        );
       }
     } else {
       await FileSaver.instance.saveAs(

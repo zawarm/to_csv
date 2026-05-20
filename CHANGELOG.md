@@ -1,3 +1,8 @@
+## 6.1.0
+- Upgraded dependencies to latest: `csv` ^8.0.0, `share_plus` ^13.1.0, `file_saver` ^0.4.0, `universal_html` ^2.3.0
+- Migrated to `csv` 8 `Csv().encode()` API and `share_plus` 13 `SharePlus.instance.share(ShareParams(...))` API
+- Raised minimum Dart SDK to `>=3.10.0 <4.0.0` (required by `share_plus` 13)
+
 ## 6.0.1
 Changelog formate changed!
 ## 5.0.6
